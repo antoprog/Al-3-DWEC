@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Actividad 3</title>
+
+    <script type="text/javascript">
+
+        // funcion basica de validación de un formulario
+        function validacion() {
+            console.log("validando los datos del formulario...")
+
+            //En esta primera validación se comprueba que el campo de direccion esté completado
+            if (direccion.value.trim() == "") {
+                //En caso de no cumplirse sale un alert
+                alert('[ERROR] El campo direccion debe de estar relleno');
+                return false;
+            }
+            //Para la comprobacion de los ingredientes se comprueba que ninguna de las casillas esté seleccionada
+
+            if (!ingrediente1.checked && !ingrediente2.checked && !ingrediente3.checked && !ingrediente4.checked) {
+                //Sale un alert en caso de no seleccionar ningun ingrediente
+                alert('[ERROR] Debe de elegir un ingrediente');
+                return false;
+            } 
+            
+
+            //Llegados a este punto todas las comprobaciones se han completado y se lanza la validación
+            alert("Formulario completado")
+            return true;
+        }
+        //En caso de que validacion() retorne true mandamos el formulario
+        window.onload = function(){
+            formulario.onsubmit = validacion;
+        }
+    </script>
+</head>
+<body>
+    <form id="formulario" action="URL">
+        
+        <p>Dirección:</p>
+        <input type="text" id="direccion" value=""/>
+        <br/>
+        <br/>
+        <input type="checkbox" value="Pepperoni" name="ingrediente" id="ingrediente1"/> Pepperoni
+        <input type="checkbox" value="Bacon" name="ingrediente" id="ingrediente2"/> Bacon
+        <input type="checkbox" value="Piña" name="ingrediente" id="ingrediente3"/> Piña
+        <input type="checkbox" value="6Quesos" name="ingrediente" id="ingrediente4"/> 6 Quesos
+        <br/>   
+        
+        <br/>
+        <input type="submit" value="Mandar Formulario">
+    </form>
+
+</body>
+</html>
