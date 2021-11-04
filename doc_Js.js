@@ -10,10 +10,13 @@ function validacion() {
     }
     
     // Utilizamos este if para cercionarnos que tiene un "@" dentro de el texto, sino dará error.
-   if (email.value.match(/bu{@}/)==null){
+   if (email.value.match( /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/)==null){
         alert('[ERROR]--Email incorrecto');
         return false;
    }
+
+  
+   
   
    //Realizamos un if donde verificamos que pone numeros del 0 al 9, para mas tarde
    //realizar un if donde pedimos que ponga 9 numeros para garantizar que introduce un numero movil.
