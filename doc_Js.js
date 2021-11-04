@@ -1,16 +1,5 @@
 
-// añadimos una función email para que el correo lleve una "@" dentro del campo y contestaremos con un mensaje si el correo es erróneo.
-function email(){
-    var email = document.getElementsById("email").value;
-    console.log(email);
-    
 
-}
-// Añadimos una función al teléfono para que al menos lleve 9 números.
-function telefono(){
-    var tel = document.getElementsById("tel").value;
-    console.log(tel)
-}
 
 function validacion() {
     console.log("validando los datos del formulario...")
@@ -19,9 +8,24 @@ function validacion() {
         alert('[ERROR] El campo debe de estar relleno');
         return false;
     }
-   
+    
+    // Utilizamos este if para cercionarnos que tiene un "@" dentro de el texto, sino dará error.
+   if (email.value.match(/bu{@}/)==null){
+        alert('[ERROR]--Email incorrecto');
+        return false;
+   }
+  
+   //Realizamos un if donde verificamos que pone numeros del 0 al 9, para mas tarde
+   //realizar un if donde pedimos que ponga 9 numeros para garantizar que introduce un numero movil.
 
+  if(tel.value.match(/(0-9)+/)==null){
+    alert('[EROOR]--Los caracteres introducidos son erróneos, solo acepta numeros del 0 al 9.')
 
+    }else if (tel.value.match(/\w{9}/)==null){
+        alert('[ERROR]--Teléfono incorrecto');
+        return false;
+
+    }
 }
 window.onload = function(){
     formulario.onsubmit = validacion;
