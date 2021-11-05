@@ -1,0 +1,8 @@
+.menu {
+	margin-left:20px;
+}
+
+.pizza,tr,td{
+	border: 1px solid black;
+	width: 50%;
+}

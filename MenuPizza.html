@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pizza Order Form</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="MenuPizza.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="MenuPizza.js"></script>
+		
+</head>
+<body>
+<div class="container">
+	<h1>Menu Pizza</h1>
+
+	<div id="tablaDatos">
+		<fieldset class="f1">
+            <legend>Datos Cliente:</legend>
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre"><br>
+                
+                <label for="dirrecion">Dirrecion:</label><br>
+                <input type="text" id="dirrecion" name="dirrecion"><br>
+                
+                <label for="telefono">Telefono:</label><br>
+                <input type="text" id="telefono" name="telefono"><br>
+                
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br>
+
+        </fieldset>
+	</div>
+	<br>
+
+	<!-- Para elegir tamaño -->
+	<div id="tablaTamaño">
+		<fieldset>
+			<legend> SELECCIONA TAMAÑO * : </legend>
+			<div>	
+				<input type="radio" name="tamaño" value="Regular"> Regular: 10.00€<br>
+				<input type="radio" name="tamaño" value="Mediana"> Mediana: 15.00€<br>
+				<input type="radio" name="tamaño" value="Familiar"> Familiar: 20.00€<br>
+				<input type="radio" name="tamaño" value="Extra-Grande"> Extra-Grande: 25.00€<br>
+			</div>
+		</fieldset>	
+	</div>
+	<br>
+
+	<!-- Para elegir salsa -->
+	<div id="tablaSalsa">
+		<fieldset>
+		<legend> SELECCIONA SALSA * : </legend>
+		<div>	
+			<input type="radio" name="salsa" value="Tomate"> Tomate: 0.00€<br>
+			<input type="radio" name="salsa" value="Carbonara"> Carbonara: 0.00€<br>
+			<input type="radio" name="salsa" value="Barbacoa"> Barbacoa: 0.00€<br>
+			<input type="radio" name="salsa" value="Sin"> Sin salsa: 0.00€<br>
+		</div>
+		</fieldset>	
+	</div>
+	<br>
+
+	<!-- Para elegir varios tipos de carne -->
+	<div id="tablaCarne">
+		<fieldset>
+			<legend>SELECCIONA CARNE :</legend>
+			<div>
+				<input type="checkbox" name="carne" value="Pepperoni"> Pepperoni: 2.00€<br>
+				<input type="checkbox" name="carne" value="Salchichas"> Salchichas: 2.00€<br>
+				<input type="checkbox" name="carne" value="Bacon"> Bacon: 2.00€<br>
+				<input type="checkbox" name="carne" value="Pollo"> Pollo: 2.00€<br>
+				<input type="checkbox" name="carne" value="Ternera"> Ternera: 2.00€<br>
+			</div>
+		</fieldset>
+	</div>
+	<br>
+	
+	<!-- Para elegir otros ingredientes -->
+	<div id="tablaOtros">
+		<fieldset>
+		<legend>SELECCIONA OTROS INGREDIENTES:</legend>
+		<div>
+			<input type="checkbox" name="otros" value="Cebolla"> Cebolla: 0.00€<br>
+			<input type="checkbox" name="otros" value="Pimientos"> Pimientos: 0.00€<br>
+			<input type="checkbox" name="otros" value="Champiñones"> Champiñones: 0.00€<br>
+			<input type="checkbox" name="otros" value="Piña"> Piña: 0.00€<br>
+			<input type="checkbox" name="otros" value="Acietunas"> Acietunas: 0.00€<br>
+		</div>
+		</fieldset>
+	</div>
+	
+	<br>
+	
+	<button id="calcular" type="submit" onclick="invoice()">Calcular precio total</button>
+	<br>
+	<br>
+	<table class="pizza">
+		<tbody>
+			<tr>
+				<td id="tamaño"></td>
+				<td id="tamañoprecio"></td>
+			</tr>
+			<tr>
+				<td id="salsa"></td>
+				<td id="salsaprecio"></td>
+			</tr>
+			<tr>
+				<td id="carne"></td>
+				<td id="carneprecio"></td>
+			</tr>
+			<tr>
+				<td id="otros"></td>
+				<td id="otrosprecio"></td>
+			</tr>
+			<tr>
+			  <td><strong>PRECIO TOTAL:</strong></td>
+				<td id="totalprice"></td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<br>
+</div>
+<br>
+<br>
+
+
+</body>
+</html>
