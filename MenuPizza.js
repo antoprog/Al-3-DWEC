@@ -1,15 +1,12 @@
 function invoice() {
-    
+
 var regExNombre = /^[A-Z]/;
-if(nombre.value.match(regExNombre))
-    {
-    return true;
-    }
-else{
-    alert("El nombre debe empezar por una mayuscula");
+if (nombre.value.match(regExNombre) == null) {
+    alert("el nombre blablabla");
     return false;
-    }
 }
+
+
 
 // Para selecionar tamaño y precio basado en tamaño.
 var tamaño = document.querySelector('input[name="tamaño"]:checked').value; console.log("tamaño="+tamaño);
@@ -100,6 +97,10 @@ $("#otrosprecio").html("+"+otrosPrecio+".00");
 
 $("#totalprice").html(" €"+totalPrice+".00");
 
+
 };
 
+window.onload = function(){
+    formulario.onsubmit=invoice;
+}
     
