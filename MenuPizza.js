@@ -1,5 +1,15 @@
 function invoice() {
-
+    
+var regExNombre = /^[A-Z]/;
+if(nombre.value.match(regExNombre))
+    {
+    return true;
+    }
+else{
+    alert("El nombre debe empezar por una mayuscula");
+    return false;
+    }
+}
 
 // Para selecionar tamaño y precio basado en tamaño.
 var tamaño = document.querySelector('input[name="tamaño"]:checked').value; console.log("tamaño="+tamaño);
